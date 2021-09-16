@@ -5,7 +5,7 @@ public class ObjectMove : MonoBehaviour
 {
 	void FixedUpdate () 
 	{
-		transform.position = new Vector3(transform.position.x - 0.03f, transform.position.y , 0);
+		transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y , 0);
 
 		if (transform.position.x <= -7.5f)
 		{
