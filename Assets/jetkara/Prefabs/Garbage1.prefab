@@ -43,7 +43,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &400634753
+--- !u!114 &-5186754148773229052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1059686611404101576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01399fcefb42894c91d196a6e544b7e, type: 3}
+  m_Script: {fileID: 11500000, guid: a1d23c2dd9bf5a045b8ec6f225dfc2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1058815766443158860
@@ -64,7 +64,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1521791278774916, guid: 9ba529c897cf4466dabc5baf347de105, type: 3}
       propertyPath: m_Name
-      value: Garbage
+      value: Garbage1
       objectReference: {fileID: 0}
     - target: {fileID: 4491044554434514, guid: 9ba529c897cf4466dabc5baf347de105, type: 3}
       propertyPath: m_RootOrder
