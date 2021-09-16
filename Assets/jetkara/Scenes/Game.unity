@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 523758920}
   - component: {fileID: 523758919}
   - component: {fileID: 523758922}
+  - component: {fileID: 523758923}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -625,6 +626,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &523758923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523758916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef0160610929544d90efeea22b8e69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 5510382442909761176}
 --- !u!1 &568704710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2077,7 @@ GameObject:
   - component: {fileID: 5510382442909761183}
   - component: {fileID: 5510382442909761181}
   - component: {fileID: 5510382442909761182}
+  - component: {fileID: 5510382442909761177}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -2070,6 +2085,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5510382442909761177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5510382442909761176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7875c39547040924ba157aab059c2394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoint: 100
+  maxHitPoint: 100
+  Regenerate: 0
+  regen: 0.1
+  isDecrease: 1
+  decreaseHealth: 1
+  regenUpdateInterval: 1
+  GodMode: 0
 --- !u!222 &5510382442909761181
 CanvasRenderer:
   m_ObjectHideFlags: 0

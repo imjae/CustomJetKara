@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 	{
 		score = 0;
 
-		InvokeRepeating("CreateObjects", 1,2);
+		InvokeRepeating("CreateObjects", 1,1);
 	}
 
 	void CreateObjects()

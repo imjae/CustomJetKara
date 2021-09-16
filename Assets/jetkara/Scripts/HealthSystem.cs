@@ -16,7 +16,6 @@ public class HealthSystem : MonoBehaviour
 {
 	public static HealthSystem Instance;
 
-	public Image currentHealthBar;
 	public float hitPoint = 100f;
 	public float maxHitPoint = 100f;
 
@@ -25,6 +24,10 @@ public class HealthSystem : MonoBehaviour
 	//==============================================================
 	public bool Regenerate = true;
 	public float regen = 0.1f;
+
+	public bool isDecrease = true;
+	public float decreaseHealth = 0.1f;
+
 	private float timeleft = 0.0f;	// Left time for current interval
 	public float regenUpdateInterval = 1f;
 
@@ -54,6 +57,9 @@ public class HealthSystem : MonoBehaviour
 	{
 		if (Regenerate)
 			Regen();
+		if (isDecrease)
+			Decrease();
+
 	}
 
 	//==============================================================
@@ -82,12 +88,32 @@ public class HealthSystem : MonoBehaviour
 	}
 
 	//==============================================================
+	// Decrease Health
+	// =====================================
+	private void Decrease()
+	{
+		timeleft -= Time.deltaTime;
+
+		if (timeleft <= 0.0) // Interval ended - update health & mana and start new interval
+		{
+			// Debug mode
+			if (!GodMode)
+			{
+				TakeDamage(decreaseHealth);
+			}
+
+			UpdateGraphics();
+
+			timeleft = regenUpdateInterval;
+		}
+	}
+
+	//==============================================================
 	// Health Logic
 	//==============================================================
 	private void UpdateHealthBar()
 	{
-		float ratio = hitPoint / maxHitPoint;
-		currentHealthBar.rectTransform.localPosition = new Vector3(currentHealthBar.rectTransform.rect.width * ratio - currentHealthBar.rectTransform.rect.width, 0, 0);
+		transform.localScale = new Vector3(hitPoint/100f, 1, 1);
 	}
 
 
