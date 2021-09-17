@@ -18,7 +18,7 @@ public class Gargabe : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, 0);
+        transform.position = new Vector3(transform.position.x - 0.3f, transform.position.y, -3);
 
         if (transform.position.x <= -7.5f)
         {

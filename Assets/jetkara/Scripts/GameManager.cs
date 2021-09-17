@@ -29,6 +29,6 @@ public class GameManager : MonoBehaviour
 
 	void CreateObjects()
 	{
-		Instantiate(gargabes[(int)Random.Range(0, gargabes.Length)], new Vector3(7.5f, Random.Range(-3.45f, 3.45f) , 0) , Quaternion.identity);
+		Instantiate(gargabes[(int)Random.Range(0, gargabes.Length)], new Vector3(7.5f, Random.Range(-3.45f, 3.45f) , -3) , Quaternion.identity);
 	}
 }
