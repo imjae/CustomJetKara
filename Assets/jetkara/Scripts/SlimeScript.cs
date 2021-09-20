@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SlimeScript : MonoBehaviour
 {
-
     private Transform healthBar;
     // Start is called before the first frame update
     void Start()
     {
+        healthBar = transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -25,5 +25,19 @@ public class SlimeScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Bullet"))
+        {
+            GameObject colBullet = collision.gameObject;
+
+            BulletScript colBulletScript = colBullet.GetComponent<BulletScript>();
+            int damage = colBulletScript.Damage;
+
+            healthBar.gameObject.GetComponent<HealthSystem>().TakeDamage(damage);
+        }
+        
     }
 }

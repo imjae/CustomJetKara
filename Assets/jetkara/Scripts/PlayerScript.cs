@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
 		isDead = false;
 		playerRigidbody = GetComponent<Rigidbody2D>();
 
-		InvokeRepeating("GenerateBullet", 1f, 0.1f);
+		InvokeRepeating("GenerateBullet", 1f, 0.3f);
 	}
 
 	void Update()

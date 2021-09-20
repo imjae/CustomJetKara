@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
 	void CreateObjects()
 	{
-		// Instantiate(slime, new Vector3(7.5f, Random.Range(-3.45f, 3.45f) , 0) , Quaternion.identity);
+		Instantiate(slime, new Vector3(7.5f, Random.Range(-3.45f, 3.45f) , 0) , Quaternion.identity);
 		
 	}
 }

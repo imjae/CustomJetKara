@@ -5,7 +5,18 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 8f;
-    public float damage = 10f;
+
+    public int Damage
+    {
+        set
+        {
+            Damage = value;
+        }
+        get
+        {
+            return Damage;
+        }
+    }
 
     private Rigidbody2D bulletRigidbody;
     private Animator animator;
