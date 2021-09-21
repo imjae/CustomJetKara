@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1261723633367540699}
+  slimeScore: 100
+  slimeSpeed: 0.07
 --- !u!58 &959182937
 CircleCollider2D:
   m_ObjectHideFlags: 0

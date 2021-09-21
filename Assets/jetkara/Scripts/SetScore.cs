@@ -7,18 +7,18 @@ public class SetScore : MonoBehaviour
 
 	void Start () 
 	{
-		scoreLabel.text = "Score: " + GameManager.score.ToString();
+		scoreLabel.text = "Score: " + GameManager.instance.score.ToString();
 
-		if (GameManager.score > 0)
+		if (GameManager.instance.score > 0)
 		{
-			if (PlayerPrefs.GetInt("Score", 0) < GameManager.score)
+			if (PlayerPrefs.GetInt("Score", 0) < GameManager.instance.score)
 			{
-				PlayerPrefs.SetInt("Score", GameManager.score);
+				PlayerPrefs.SetInt("Score", GameManager.instance.score);
 				PlayerPrefs.Save();
 			}
 		}
 
 		bestScoreLabel.text = "HighScore: " + PlayerPrefs.GetInt("Score", 0).ToString();
-		GameManager.score = 0;
+		GameManager.instance.score = 0;
 	}
 }

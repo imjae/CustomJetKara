@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  generateBullte: 0.3
   healthBar: {fileID: 5510382442909761176}
   bullet: {fileID: 1410660588443111903, guid: 17302c723e38c9d4687007e4b111b24f, type: 3}
 --- !u!1 &625803977
@@ -1274,8 +1275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3877d22858afe4fad7c4edac4ada8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generateSlime: 1.5
   slime: {fileID: 6675472118050950909, guid: 48c42c5267664ba4c9125e4d5fb7b621, type: 3}
   scoreLabel: {fileID: 1011513036}
+  score: 0
 --- !u!4 &1081117486
 Transform:
   m_ObjectHideFlags: 0

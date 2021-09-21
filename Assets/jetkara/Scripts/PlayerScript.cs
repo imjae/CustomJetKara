@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
 	public float speed = 0.5f; // 이동 속력
+	public float generateBullte = 0.3f;
 	public GameObject healthBar;
 	public GameObject bullet;
 	Transform attackPoint;
@@ -16,7 +17,7 @@ public class PlayerScript : MonoBehaviour
 		isDead = false;
 		playerRigidbody = GetComponent<Rigidbody2D>();
 
-		InvokeRepeating("GenerateBullet", 1f, 0.6f);
+		InvokeRepeating("GenerateBullet", 0.5f, generateBullte);
 	}
 
 	void Update()
