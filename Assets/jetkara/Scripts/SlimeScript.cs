@@ -5,16 +5,33 @@ using UnityEngine;
 public class SlimeScript : MonoBehaviour
 {
     public GameObject healthBar;
+
+    private bool isDead;
+    private Animator animator;
+    private Collider2D collider;
     // Start is called before the first frame update
     void Start()
     {
-
+        isDead = false;
+        animator = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HealthSystem healthSystem = healthBar.GetComponent<HealthSystem>();
+        if (healthSystem.hitPoint <= 0 && !isDead)
+        {
+            isDead = true;
+            Destroy(collider);
+            animator.SetTrigger("Death");
+        }
+    }
+
+    void SlimeDeath()
+    {
+        Destroy(gameObject);
     }
 
     void FixedUpdate()

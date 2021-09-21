@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public int Damage = 10;
 
     private Rigidbody2D bulletRigidbody;
+    private Collider2D bulletCollider;
     private Animator animator;
 
     private void Start()
@@ -16,6 +17,7 @@ public class BulletScript : MonoBehaviour
         bulletRigidbody.velocity = Vector2.right * speed;
         Destroy(gameObject, 3f);
 
+        bulletCollider = gameObject.GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -27,10 +29,13 @@ public class BulletScript : MonoBehaviour
             {
                 bulletRigidbody.velocity = Vector2.zero;
                 animator.SetTrigger("Explosion");
-
-
-                // Destroy(collision.gameObject);
             }
         }
+    }
+
+    void BulletExplosion()
+    {
+        Destroy(bulletCollider);
+        Destroy(gameObject);
     }
 }
