@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SlimeScript : MonoBehaviour
 {
-    private Transform healthBar;
+    public GameObject healthBar;
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = transform.GetChild(0);
+
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class SlimeScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, 0f);
+        transform.position = new Vector3(transform.position.x - 0.05f, transform.position.y, 0f);
 
         if (transform.position.x <= -7.5f)
         {
@@ -36,8 +36,7 @@ public class SlimeScript : MonoBehaviour
             BulletScript colBulletScript = colBullet.GetComponent<BulletScript>();
             int damage = colBulletScript.Damage;
 
-            healthBar.gameObject.GetComponent<HealthSystem>().TakeDamage(damage);
+            healthBar.GetComponent<HealthSystem>().TakeDamage(damage);
         }
-        
     }
 }

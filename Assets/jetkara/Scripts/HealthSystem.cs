@@ -123,6 +123,8 @@ public class HealthSystem : MonoBehaviour
 		if (hitPoint < 1)
 			hitPoint = 0;
 
+		Debug.Log(hitPoint);
+
 		UpdateGraphics();
 	}
 

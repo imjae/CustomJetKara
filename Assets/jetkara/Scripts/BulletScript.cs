@@ -5,18 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 8f;
-
-    public int Damage
-    {
-        set
-        {
-            Damage = value;
-        }
-        get
-        {
-            return Damage;
-        }
-    }
+    public int Damage = 10;
 
     private Rigidbody2D bulletRigidbody;
     private Animator animator;
@@ -40,7 +29,7 @@ public class BulletScript : MonoBehaviour
                 animator.SetTrigger("Explosion");
 
 
-                Destroy(collision.gameObject);
+                // Destroy(collision.gameObject);
             }
         }
     }
