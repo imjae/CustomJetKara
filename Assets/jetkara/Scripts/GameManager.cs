@@ -4,7 +4,9 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance; // 싱글톤을 할당할 전역 변수
 	public float generateSlime;
+	public float generateCandy;
 	public GameObject slime;
+	public GameObject candy;
 
 	public TextMesh scoreLabel;
 	public int score = 0; // 게임 점수
@@ -34,7 +36,8 @@ public class GameManager : MonoBehaviour
 	{
 		score = 0;
 
-		InvokeRepeating("CreateObjects", 1, generateSlime);
+		InvokeRepeating("CreateSlimes", 1, generateSlime);
+		InvokeRepeating("CreateCandies", 10, generateCandy);
 	}
 
 	// 점수를 증가시키는 메서드
@@ -49,9 +52,12 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void CreateObjects()
+	void CreateSlimes ()
 	{
 		Instantiate(slime, new Vector3(7.5f, Random.Range(-3.45f, 3.45f) , 0) , Quaternion.identity);
-		
+	}
+	void CreateCandies()
+    {
+		Instantiate(candy, new Vector3(7.5f, Random.Range(-3.1f, 3.1f), 0), Quaternion.identity);
 	}
 }
