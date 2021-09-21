@@ -59,5 +59,12 @@ public class PlayerScript : MonoBehaviour
 
 		if(collision.tag == "Enemy")
 			healthBar.GetComponent<HealthSystem>().TakeDamage(10);
+		if(collision.tag == "Candy")
+        {
+			Debug.Log("캔디!");
+			healthBar.GetComponent<HealthSystem>().HealDamage(collisionObject.GetComponent<CandyScript>().healAmount);
+			Destroy(collision.gameObject);
+		}
+			
 	}
 }

@@ -5,11 +5,12 @@ using UnityEngine;
 public class CandyScript : MonoBehaviour
 {
     public float candySpeed;
+    public float healAmount;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        healAmount = Random.Range(10f, 30f);
     }
 
     // Update is called once per frame

@@ -8,6 +8,7 @@ TagManager:
   - HealthSprite
   - Enemy
   - Bullet
+  - Candy
   layers:
   - Default
   - TransparentFX
