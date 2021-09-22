@@ -6,7 +6,9 @@ public class ItemScript : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float startSpeed = 30;
+    private float moveSpeed = 25f;
+    Vector2 startPos;
+    Vector2 Movement;
 
     [SerializeField]
     private Rigidbody2D objectRigidobody2d;
@@ -14,15 +16,8 @@ public class ItemScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        float randomX, randomY;
-        randomX = Random.Range(-1.0f, 1.0f);
-        randomY = Random.Range(-1.0f, 1.0f);
-
-        Vector2 vector2 = new Vector2(randomX, randomY);
-        vector2 = vector2.normalized;
-        Debug.Log(vector2);
-
-        objectRigidobody2d.velocity = vector2 * startSpeed;
+        startPos = transform.position;
+        Movement = new Vector2(-1, 1);
     }
 
     // Update is called once per frame
@@ -33,6 +28,13 @@ public class ItemScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Debug.Log("z");
+
     }
+
+    void FixedUpdate()
+    {
+        if (null != objectRigidobody2d)
+            objectRigidobody2d.velocity = Movement * moveSpeed;
+    }
+
 }
